@@ -144,7 +144,14 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
                 if let imageRelease = self?.imageReleased, imageRelease {
                     self?.imageView.image = nil
                 } else {
-                    self?.imageView.image = image
+                    if let localSource = self?.image as? LocalImageSource {
+                        let tintedImage = localSource.image.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+                        self?.imageView.contentMode = localSource.customContentMode
+                        self?.imageView.tintColor = localSource.customTintColor
+                        self?.imageView.image = tintedImage
+                    } else {
+                        self?.imageView.image = image
+                    }
                 }
                 self?.activityIndicator?.hide()
                 self?.loadFailed = image == nil

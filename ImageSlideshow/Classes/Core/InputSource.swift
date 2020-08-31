@@ -91,3 +91,15 @@ open class FileImageSource: NSObject, InputSource {
         callback(image)
     }
 }
+
+@objcMembers
+open class LocalImageSource: ImageSource {
+    var customTintColor: UIColor?
+    var customContentMode: UIView.ContentMode = .scaleAspectFill
+    
+    public init?(image: UIImage, tintColor: UIColor, contentMode: UIView.ContentMode) {
+        self.customTintColor = tintColor
+        self.customContentMode = contentMode
+        super.init(image: image)
+    }
+}
