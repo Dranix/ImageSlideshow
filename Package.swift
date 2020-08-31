@@ -42,6 +42,14 @@ let package = Package(
                 "Classes/Core/UIImage+AspectFit.swift",
                 "Classes/Core/UIImageView+Tools.swift",
                 "Classes/Core/ZoomAnimatedTransitioning.swift",
+                
+                "Classes/InputSources/AFURLSource.swift",
+                "Classes/InputSources/AlamofireLegacySource.swift",
+                "Classes/InputSources/AlamofireSource.swift",
+                "Classes/InputSources/KingfisherSource.swift",
+                "Classes/InputSources/ParseSource.swift",
+                "Classes/InputSources/SDWebImageSource.swift",
+                
                 "Assets/ic_cross_white@2x.png",
                 "Assets/ic_cross_white@3x.png",
             ]),
